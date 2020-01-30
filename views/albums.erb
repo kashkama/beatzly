@@ -1,0 +1,20 @@
+<h1>Beatzly</h1>
+<form action="/albums">
+	<div class="form-group">
+		<label for="search">search</label>
+		<input id="search" name="search" class="form-control">
+	</div>
+	<button type="submit" class="btn">search</button>
+</form>
+<h3>Available Records</h3>
+<%if @albums.any?%>
+	<ul>
+		<% @albums.each do |album|%>
+			<li><a href="/albums/<%= album.id %>"><%= album.name%></a></li>
+		<% end %>
+	</ul>
+<% else %>
+	<p>There are currently no records to display</p>
+<% end%>
+
+<a href="/albums/new">Add new album</a>

@@ -1,0 +1,16 @@
+<h1>update <%= @album.name %></h1>
+
+<form action="/albums/<%= @album.id %>" method="post">
+	<input name="_method" type="hidden" value="patch">
+
+	<label for="name">Rename Album</label>
+	<input id="name" name="name" type="text">
+
+	<button type="submit">update</button>
+</form>
+
+<form action="/albums/<%= @album.id%>" method="post">
+	<input name="_method" type="hidden" value="delete">
+	<button type="submit">delete <%=@album.name%></button>
+</form>
+<p><a href="/albums">return to album list</a></p>
