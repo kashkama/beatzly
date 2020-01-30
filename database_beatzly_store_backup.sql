@@ -195,6 +195,7 @@ COPY public.albums (id, name) FROM stdin;
 125	A Love Supreme
 127	Blue
 128	Kamikaze
+129	old town road
 \.
 
 
@@ -235,7 +236,7 @@ SELECT pg_catalog.setval('public.albums_artists_id_seq', 1, false);
 -- Name: albums_id_seq; Type: SEQUENCE SET; Schema: public; Owner: kashkama
 --
 
-SELECT pg_catalog.setval('public.albums_id_seq', 128, true);
+SELECT pg_catalog.setval('public.albums_id_seq', 129, true);
 
 
 --

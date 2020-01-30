@@ -43,10 +43,10 @@ class Artist
 	end
 
 	def update(attributes)
-		if (attributes.has_keys?(:name)) && (attributes.fetch(:name) != nil)
+		if (attributes.has_key?(:name)) && (attributes.fetch(:name) != nil)
 			@name = attributes.fetch(:name)
 			DB.exec("UPDATE artists SET name = '#{@name}' WHERE id = #{@id};")
-		elsif (attributes.has_keys?(:album_name)) && (attributes.fetch(:album_name) != nil)
+		elsif (attributes.has_key?(:album_name)) && (attributes.fetch(:album_name) != nil)
 			album_name = attributes.fetch(:album_name)
 			album = DB.exec("SELECT * FROM albums WHERE lower(name)='#{album_name.downcase}';").first
 			if album != nil
