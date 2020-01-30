@@ -29,7 +29,7 @@ end
 
 get('/albums/:id') do
 	@album = Album.find(params[:id].to_i)
-	@id = params[:id].to_i
+	@album_id = params[:id].to_i
 	erb(:album)
 end
 
@@ -59,6 +59,7 @@ end
 
 get('/albums/:id/songs/:song_id') do
 	@song = Song.find(params[:song_id].to_i)
+	@song_id = params[:song_id].to_i
 	erb(:song)
 end
 
